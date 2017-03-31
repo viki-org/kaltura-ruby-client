@@ -21,3 +21,28 @@ IMPORTANT: never run the tests of the client library against a production accoun
 Update kaltura.yml with your account information
 Change directory to kaltura/ruby
 Execute the command: rake test
+
+## Sample Code Ruby Client
+
+```rb
+require 'kaltura'
+
+KALTURA_PARTNER_ID = ENV['KALTURA_PARTNER_ID']
+KALTURA_USERNAME = ENV['KALTURA_USERNAME']
+KALTURA_PASSWORD = ENV['KALTURA_PASSWORD']
+KALTURA_SERVICE_URL = ENV['KALTURA_SERVICE_URL']
+
+config = Kaltura::KalturaConfiguration.new
+config.service_url = KALTURA_SERVICE_URL
+
+KalturaClient = Kaltura::KalturaClient.new config
+
+# Login
+
+KalturaClient.ott_user_service.login(
+  KALTURA_PARTNER_ID,
+  KALTURA_USERNAME,
+  KALTURA_PASSWORD
+)
+```
+
