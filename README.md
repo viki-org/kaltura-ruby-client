@@ -6,6 +6,8 @@ Kaltura does not recommend to use [the repo from Kaltura Community](https://gith
 
 The latest version of ruby client can be found [here](http://console-sgs1.ott.kaltura.com/restful/clientlibs/) from Kaltura.
 
+There are classes or enums from the community repo that are not included in the Client provided by Kaltura. Please add them based on the need.
+
 ## How to update
 
 - Download the latest `ruby_xx-xx-xxxx.tar.gz` file from the link above.
@@ -30,9 +32,9 @@ This source contains:
 ### DEPENDENCIES
 
 ```
-RAKE			(http://rake.rubyforge.org/)
-Shoulda			(gem install shoulda)
-Rest_client		(gem install rest-client)
+RAKE                  (http://rake.rubyforge.org/)
+Shoulda               (gem install shoulda)
+Rest_client           (gem install rest-client)
 ```
 
 ### RUNNING THE CLIENT LIBRARY TESTS
