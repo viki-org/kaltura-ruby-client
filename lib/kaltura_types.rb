@@ -5601,9 +5601,12 @@ module Kaltura
 		#             Possible values: 0 – EPG linear programs entries; 1 - Recordings; Any media type ID (according to media type IDs defined dynamically in the system).
 		#             If omitted – all types should be included.
 		attr_accessor :type_in
-		# Comma separated list of EPG channel ids to search within.
-		attr_accessor :id_in
+		# Channel Id
+		attr_accessor :id_equal
 
+		def id_equal=(val)
+			@id_equal = val.to_i
+		end
 
 		def from_xml(xml_element)
 			super
@@ -5613,8 +5616,8 @@ module Kaltura
 			if xml_element.elements['typeIn'] != nil
 				self.type_in = xml_element.elements['typeIn'].text
 			end
-			if xml_element.elements['idIn'] != nil
-				self.id_in = xml_element.elements['idIn'].text
+			if xml_element.elements['idEqual'] != nil
+				self.id_equal = xml_element.elements['idEqual'].text
 			end
 		end
 
